@@ -33,7 +33,7 @@ export default class File extends React.Component {
   }
 
   render() {  
-    if(this.props.file.type === "film") {
+    if(this.props.file.videos) {
       return (
         <div className="file col-md-4 col-xs-6"><a href="#">
           <Popup 

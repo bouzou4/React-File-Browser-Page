@@ -43,7 +43,7 @@ export default class FileBrowser extends React.Component {
       Axios.get(`https://pixabay.com/api/?key=9737328-fd4eba15b5365722c3621ceb4&per_page=${num/2}&q=${query}&page=${page}`)
       .then((res) => {
         var files = res.data.hits;
-        Axios.get(`https://pixabay.com/api/videos/?key=9737328-fd4eba15b5365722c3621ceb4&per_page=${num/2}&q=${query}&page=${page+1}`)
+        Axios.get(`https://pixabay.com/api/videos/?key=9737328-fd4eba15b5365722c3621ceb4&per_page=${num/2}&q=${query}&page=${page}`)
         .then((res2) => {
           files = files.concat(res2.data.hits);
 
