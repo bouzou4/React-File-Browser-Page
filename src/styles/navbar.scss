@@ -1,0 +1,90 @@
+nav {
+  position: absolute;
+  width: 100%;
+}
+
+.navbar {
+  padding: 0;
+  width: 100%;
+  left: 0;
+  background-color: rgba(73, 73, 73, .7);
+  color: white;
+  font-size: 10pt;
+  text-align: center;
+  line-height: 40px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+.navbar > div {
+  max-width: 1200px;
+}
+
+.navbar-toggler-icon {
+  color:  white;
+  height: 100%;
+}
+
+a.nav-item {
+  width: 100%;
+}
+
+.navbar a {
+  color: white;
+  height: 100%;
+  display: inline-block;
+  text-decoration: none;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+.navbar a:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 1);
+  -webkit-transform: scaleY(0);
+  transform: scaleY(0);
+  -webkit-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.navbar a:hover, .nav-bar a:focus, .nav-bar a:active {
+  color: grey;
+}
+.navbar a:hover:before, .nav-bar a:focus:before, .nav-bar a:active:before {
+  -webkit-transform: scaleY(1);
+  transform: scaleY(1);
+}
+
+.nav-float {
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.navbar-ghost {
+  opacity: 0.7;
+  background-color: #6D6D6D;
+}
