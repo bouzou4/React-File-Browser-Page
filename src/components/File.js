@@ -35,7 +35,7 @@ export default class File extends React.Component {
   render() {  
     if(this.props.file.videos) {
       return (
-        <div className="file col-md-4 col-xs-6"><a href="#">
+        <div className="file"><a href="#">
           <Popup 
            isOpen={this.state.open}
            contentLabel={this.props.file.id.toString()}
@@ -48,21 +48,23 @@ export default class File extends React.Component {
           <img 
             src={`https://i.vimeocdn.com/video/${this.props.file.picture_id}_200x150.jpg`} 
             alt="" 
-            className="file-thumb col-sm-6 col-xs-12" 
+            className="file-thumb" 
             onLoad={this.onLoad}
             onClick={this.handleOpenFile}
           />
-          <p className="file-title col-sm-6 col-xs-12">{this.props.file.id}</p>
-          <img src="./img/mov.png" alt="" className="file-icon" />
-          <p className="file-duration">{this.secondsToMS(this.props.file.duration)}</p>
-          <p className="file-created col-sm-6 col-xs-12">Downloaded:</p>
-          <p className="file-date col-sm-6 col-xs-12">{this.props.file.downloads + " times"}</p>
+          <ul>
+            <li className="file-title">ID: {this.props.file.id}</li>
+            <img src="./img/mov.svg" alt="" className="file-icon" />
+            <li className="file-duration">{this.secondsToMS(this.props.file.duration)}</li>
+            <li className="file-created">Downloaded:</li>
+            <li className="file-date">{this.props.file.downloads + " times"}</li>
+          </ul>
         </a></div>
       )
     }
     else {
       return(
-        <div className="file col-md-4 col-xs-6"><a href="#">
+        <div className="file"><a href="#">
           <Popup 
            isOpen={this.state.open}
            contentLabel={this.props.file.id.toString()}
@@ -75,15 +77,17 @@ export default class File extends React.Component {
           <img 
             src={this.props.file.previewURL} 
             alt="" 
-            className="file-thumb col-sm-6 col-xs-12" 
+            className="file-thumb" 
             onLoad={this.onLoad} 
             onClick={this.handleOpenFile}
           />
-          <p className="file-title col-sm-6 col-xs-12">{this.props.file.id}</p>
-          <img src="./img/cam.png" alt="" className="file-icon" />
-          <p className="file-resolution col-sm-6 col-xs-12">{this.props.file.imageWidth + " x " + this.props.file.imageHeight}</p>
-          <p className="file-created col-sm-6 col-xs-12">Downloaded:</p>
-          <p className="file-date col-sm-6 col-xs-12">{this.props.file.downloads + " times"}</p>
+          <ul>
+            <li className="file-title">ID: {this.props.file.id}</li>
+            <img src="./img/cam.svg" alt="" className="file-icon" />
+            <li className="file-resolution">{this.props.file.imageWidth + " x " + this.props.file.imageHeight}</li>
+            <li className="file-created">Downloaded:</li>
+            <li className="file-date">{this.props.file.downloads + " times"}</li>
+          </ul>
         </a></div>
       )
     }

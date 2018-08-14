@@ -5,27 +5,22 @@ export default class Navbar extends React.Component {
     super(props);
 
     this.state = {
-      tabs: ["Home", "Account", "About", "Contact"]
+      groupType: "Organization",
+      server: "151 Pro-Serv" 
     }
   }
 
   render() {
     return(
-      <nav className="navbar navbar-expand-md">
-        <div className="container-fluid col-lg-8 col-md-10 mx-auto">
-          <div className="navbar-header">
-            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#my-nav" aria-controls="my-nav" aria-expanded="false" aria-label="Toggle navigation">
-              <span className="navbar-toggler-icon"><i className="fas fa-bars"></i></span>
-            </button>
-          </div>
-
-          <div className="collapse navbar-collapse" id="my-nav">
-            <ul className="navbar-nav mr-auto">
-              {this.state.tabs.map(function(el, index) {
-                return <li className="nav-item" key={el} ><a href={"#"+el.toLowerCase()} className="nav-link">{el}</a></li>;
-              })}
-            </ul>
-          </div>
+      <nav className="nav-bar col-xs-12">
+        <div className="nav-icon nav-element"><img src="./img/grid.png" alt="menu" /></div>
+        <div className="nav-brand nav-element">
+          <img src="./img/logo.png" alt="Videri" />
+          Content
+        </div>
+        <div className="nav-title nav-element">
+          <span className="nav-group-type">{this.state.groupType}</span>
+          <span className="nav-server-name">{this.state.server}</span> 
         </div>
       </nav>
     )

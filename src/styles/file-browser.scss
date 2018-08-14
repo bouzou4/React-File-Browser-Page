@@ -1,33 +1,117 @@
 .folders {
-  background-color: #e6e6e6;
+  background-color: #ffffff;
+  height: 150px;
+  padding: 25px 15px;
+  border: 1px solid #DEDEDE;
 }
 
-.folder a {
-  width: 100%;
-  height: 100%;
-  padding: 5px 0;
-  display: block;
-  color: inherit;
-  text-decoration: none;
+a.new-folder-btn {
+  position: relative;
+  top: 0px;
+  float: right;
+  display: inline-block;
+  color: #1E88E5 !important;
 }
 
-.folder-icon {
-  height: auto;
-  width: 100%;
-  margin: 0 auto;
-  display: block;
-  margin-top: 10px;
+.folder {
+  font-family: "Lato-Regular", helvetica, san-serif;
+  letter-spacing: .6px;
+  line-height: 20px;
+  font-size: 16px;
+
+  a {
+    width: 100%;
+    height: 100%;
+    padding: 5px 0;
+    display: block;
+    color: #686871;
+    text-decoration: none;
+  }
+
+  .folder-icon {
+    height: 45px;
+    width: 45px;
+    margin: 0 auto;
+    display: block;
+    margin-top: 10px;
+  }
+
+  .folder-title {
+    text-align: center;
+    padding: 13px 0;
+    margin: 0;
+  }
 }
 
-.folder-title {
-  text-align: center;
-  padding: 5px 0;
+.folder.active .folder-title{
+  color: #1992B7;
 }
+
+
 
 .files-container {
-  background-color: #e6e6e6;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding: 20px 25px;
+
+  .file-browser-tools {
+    height: 50px;
+    width: 100%;
+    padding-left: 5px;
+    margin-bottom: 20px;
+
+
+    .files-content-label {
+      text-transform: uppercase;
+      font-size: 18px;
+      line-height: 25px;
+      letter-spacing: .6px;
+      float: left;
+    }
+
+    .file-upload {
+      display: inline-block;
+      height: 100%;
+      float: right;
+
+      img {
+        float: left;
+        margin: 5px 10px;
+        height: 40px;
+        width: 40px;
+      }
+
+      .file-upload-heading {
+        width: 210px;
+        line-height: 18px;
+        font-size: 14px;
+        margin-bottom: 0px;
+        color: #505050;
+        float: left;
+      }
+
+      .file-upload-body {
+        line-height: 12px;
+        font-size: 10px;
+        color: #9A9696;
+      }
+    }
+
+    .file-filter-icon {
+      height: 30px;
+      width: 30px;
+      margin: 10px 15px;
+      float: right;
+    }
+
+    .file-search-input {
+      height: 40px;
+      width: 300px;
+      margin: 5px;
+      padding: 10px 15px;
+      border: 1px solid #dedede;
+      border-radius: 20px;
+      float: right;
+    }
+  }
 
   .lds-roller {
     margin: 0 auto;
@@ -36,20 +120,29 @@
 }
 
 .file {
-  border: 2px solid lightgray;
+  border: 1px solid #dedede;
+  background-color: #ffffff;
+  width: calc(25% - 10px);
+  height: 175px;
+  margin: 2.5px 5px;
+  padding: 15px;
   display: inline-block;
+  font-family: "Lato-Regular", helvetica, san-serif;
+  letter-spacing: .3px;
+  font-size: 14px;
+  line-height: 18px;
+  vertical-align: middle;
 
   a {
     text-decoration: none;
     color: inherit;
   }
 
-  p {
+  ul {
     display: inline-block;
+    padding-left: 20px;
+    list-style-type: none;
     margin: 0;
-    padding: 0;
-    text-align: left;
-    float: right;
   }
 
   .lds-roller {
@@ -61,16 +154,46 @@
     float: left;
   }
 
-  .file-duration {
-    line-height: 35px;
-    font-size: 10pt;
-    padding-left: 3px;
+  .file-thumb {
+    height: auto;
+    max-width: 50%;
+    display: inline-block;
+    margin: 5px 0;
+    padding-left: 0;
     float: left;
   }
 
+  .file-title {
+    margin-bottom: 10px;
+  }
+
+  .file-icon {
+    height: 25px;
+    width: 25px;
+    display: inline-block;
+    float: left;
+    margin-bottom: 13px;
+  }
+
+  .file-duration {
+    padding-left: 3px;
+    line-height: 23px;
+    float: left;
+  }
+
+  .file-resolution {
+    font-size: 14px;
+    line-height: 17px;
+    white-space: nowrap;
+    clear: left;
+    margin-bottom: 13px;
+  }
+  
   .file-created {
-    font-size: 8pt;
+    font-size: 10px;
+    line-height: 12px;
     padding-bottom: 0;
+    margin-bottom: 5px;
   }
 
   .file-date {
@@ -100,29 +223,5 @@
     width: 100%;
     height: auto;
   }
-}
-
-.file-thumb {
-  height: auto;
-  display: inline-block;
-  margin: 5px 0;
-  padding-left: 0;
-  float: left;
-}
-
-.file-icon {
-  height: 35px;
-  width: 35px;
-  display: inline-block;
-  float: left;
-}
-
-.file-title {
-  font-weight: 500;
-  font-size: 16pt;
-}
-
-.file-resolution {
-  font-size: 10pt;
 }
 
