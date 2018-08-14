@@ -9,7 +9,7 @@ export default class FileBrowser extends React.Component {
 
     this.state = {
       folders: ["Cars", "Planes", "Cats", "Apples"],
-      activeFolder: "",
+      activeFolder: 0,
       files: [],
       isLoading: true,
       page: 1
@@ -20,19 +20,14 @@ export default class FileBrowser extends React.Component {
   }
 
   componentDidMount() {
-    var activeFolder = this.state.folders[0];
+    var activeFolder = this.state.folders[this.state.activeFolder];
     this.getFiles(activeFolder, this.state.page, 50);
-
-    this.setState({
-      activeFolder: activeFolder
-    });
-
   }
 
   handleFolderClick(folder) {
     this.setState({
       activeFolder: folder
-    }, () => this.getFiles(this.state.activeFolder, 1, 50));
+    }, () => this.getFiles(this.state.folders[this.state.activeFolder], this.state.page, 50));
   }
 
   getFiles(query, page, num) {
@@ -71,7 +66,7 @@ export default class FileBrowser extends React.Component {
   render() {  
     return(
       <React.Fragment>
-        <FolderBar folders={this.state.folders} onFolderClick={this.handleFolderClick} />
+        <FolderBar folders={this.state.folders} activeFolder={this.state.activeFolder} onFolderClick={this.handleFolderClick} />
         <FilesTable files={this.state.files} isLoading={this.state.isLoading} />
       </React.Fragment>
     )

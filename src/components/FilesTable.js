@@ -22,9 +22,9 @@ export default function FilesTable(props) {
                 id="fileSearch" 
                 placeholder="Search . . ."
               />
-              <a><img src="./img/filter.svg" class="file-filter-icon" alt="filter" /></a>
+              <a><img src="./img/filter.svg" className="file-filter-icon" alt="filter" /></a>
           </form>
-          <div class="file-upload">
+          <div className="file-upload">
             <img src="./img/upload.svg" alt="upload" />
             <p className="file-upload-heading">DRAG and DROP files<br />
             <span className="file-upload-body">Recommended file types: Images (.png), videos (.mp4) and apps (.apk) up to 3GB in file size</span></p>
